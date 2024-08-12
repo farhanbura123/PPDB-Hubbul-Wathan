@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPDB MI HUBBUL WATHAN</title>
+
+    <meta property="og:title" content="PPDB Online" />
+    <meta property="og:description" content="PPDB Online" />
+    <meta property="og:image" content="/static/foto/logo.jpeg" />
+    <link rel="shortcut icon" href="/static/foto/logo.jpeg" type="image/x-icon" />
+    <link rel="icon" href="/static/foto/logo.png" type="image/x-icon" />
+    <!-- Link Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <!-- Link Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <!-- Link Ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- Link CDN Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Link FA -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <!-- Link CSS -->
+    <link href="{{ url_for('static', filename='landingpage.css') }}" rel="stylesheet" />
+
+    <script>
+        $(document).ready(function () {
+            // Menutup Collapse yang sedang aktif saat Collapse lainnya dibuka
+            $('.collapse').on('show.bs.collapse', function () {
+                $('.collapse.show').each(function () {
+                    $(this).collapse('hide');
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function (event) {
+            // Teks yang ingin ditampilkan secara mengetik otomatis
+            var text = "MADRASAH IBTIDAIYAH HUBBUL WATHAN TOLI-TOLI";
+
+            // Kecepatan mengetik (milidetik per karakter)
+            var speed = 100;
+
+            // Fungsi untuk menampilkan tulisan mengetik otomatis
+            function typeWriter() {
+                var i = 0;
+                var typewriter = document.getElementById("sambutan");
+
+                // Menggunakan setInterval untuk mengatur kecepatan mengetik
+                var timer = setInterval(function () {
+                    if (i < text.length) {
+                        typewriter.innerHTML += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(timer);
+                    }
+                }, speed);
+            }
+
+            // Memanggil fungsi untuk memulai efek mengetik otomatis
+            typeWriter();
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg rounded fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
+                aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+                <a class="navbar-brand col-lg-3 me-0" href="/">
+                    <img src="/static/foto/logo.png" style="width: 45px; height:45px" />
+                    <span class="fs-4 nav-font" style="font-weight:bold; color: white;">PPDB MIS HBW</span>
+                </a>
+                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#info">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#alur">Alur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#syarat">Syarat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End navbar -->
+
+    <!-- Carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="static/foto/slide3.jpg" class="d-block w-100" alt="Gambar1" id="carouselfoto">
+            </div>
+            <div class="carousel-item">
+                <img src="static/foto/ganti2.jpg" class="d-block w-100" alt="Gambar2" id="carouselfoto">
+            </div>
+            <div class="carousel-item">
+                <img src="static/foto/foto3.jpeg" class="d-block w-100" alt="Gambar3" id="carouselfoto">
+                <div class="carousel-caption">
+                    <h1><b>Pendaftaran Peserta Didik Baru</b></h1>
+                    <p><b>Madrasah Ibtidaiyah Hubbul Wathan Toli-Toli
+                            </b></p>
+                    <p>
+                        <a class="btn btn-lg btn-danger" href="/register">
+                            <i class="fa fa-graduation-cap"> &nbsp;
+                                <b>DAFTAR</b>
+                            </i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- End Carousel -->
+
+    <!-- Heroes -->
+    <section id="info">
+        <div class="container">
+            <div class="px-4 py-5 my-5 text-center">
+                <img class="d-block mx-auto mb-4" src="static/foto/logo.png" alt="logo"
+                    style="margin-top:1%;margin-bottom:-10px;" width="150">
+                <span class="name shad" style="font-size: 35px;line-height: 35px;color: #fff;
+                        font-weight: bold;" id="sambutan">
+                    SELAMAT DATANG DI PPDB ONLINE <br></span>
+                <div class="col-lg-6 mx-auto">
+                    <br>
+                    <span>
+                        <a href="/login" class="btn btn-warning" style="margin: 5px; border-radius: 6px;">
+                            <i class="fa fa-sign-in faa-pulse"></i> &nbsp;
+                            <b>Masuk</b>
+                        </a>
+                    </span>
+                </div>
+                <marquee scrollamount="15">
+                    <font size="4" color="yellow"><b> [INFORMASI PENTING]</b> </font>
+                </marquee>
+                <marquee scrollamount="7">
+                    <font size="4" color="white">Pendaftaran Peserta Didik Baru Akan Segara Di Tutup</font>
+                </marquee>
+                <marquee scrollamount="5">
+                    <font size="4" color="white"> ---------------- Pada Tanggal <font color="yellow">30 Juni 2024 <font
+                                color="white">Di Website ini ---------------- </font>
+                        </font>
+                    </font>
+                </marquee>
+            </div>
+        </div>
+    </section>
+    <!-- End Heroes -->
+
+    <!-- About Us -->
+    <section id="about">
+        <div class="container">
+            <div class="px-4 py-5 text-center">
+                <span class="display-6 fw-bold text-body-emphasis-white border-bottom">About Us</span>
+            </div>
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <span class="featurette-heading fs-2 border-bottom fw-semibold">Sejarah Singkat</span>
+                    <div class="py-2">
+                        <p class="lead">MIS HUBBUL WATHAN adalah salah
+                            satu
+                            satuan pendidikan dengan jenjang sekolah dasar di Desa Toli-Toli, Kec. Lalonggasumeeto, Kab. Konawe,
+                            Sulawesi Tenggara. Yayasan swasta ini memulai kegiatan pendidikan belajar mengajarnya pada tahun
+                            1983. Dalam menjalankan kegiatannya, MIS HUBBUL WATHAN berada di bawah naungan Kementerian
+                            Agama.</p>
+                    </div>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" src="/static/foto/slide3.jpeg" id="imgabout">
+                </div>
+            </div>
+            <hr class="text-white">
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+                <div class="col d-flex align-items-start">
+                    <div
+                        class="d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 text-white-50">
+                        <i class="fa fa-puzzle-piece fa-2x" style="color: yellow;"></i>
+                    </div>
+                    <div>
+                        <h3 class="fs-2 text-warning fw-semibold">Visi Kami</h3>
+                        <p>“Mencetak Generasi Muda Yang Mandiri Dan Berakhlak Qur'ani”</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div
+                        class="d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 text-white-50">
+                        <i class="fa fa-puzzle-piece fa-2x" style="color: yellow;"></i>
+                    </div>
+                    <div>
+                        <h3 class="fs-2 text-warning fw-semibold">Misi Kami</h3>
+                        <ol>
+                            <li>Memberikan pemahaman ilmu Al - Qur‟an secara detail.</li>
+                            <li>Memberikan pendidikan Al- Quran berbasis karakter /Akhlakul
+                                Karimah.</li>
+                            <li>Mencetak para hafidz dan hafidzhah Qur‟an yang mempunyai skill
+                                dunia dan akhirat.</li>
+                            <li>Memberikan pemahaman ilmu dunia dan cara mencapainya.</li>
+                            <li>Mengajarkan cara ibadah sesuai dengan tuntunan agama dan sesuai
+                                dengan sunnah rosulullah.</li>
+                        </ol>
+                    </div>
+                </div>
+    </section>
+    <!-- End About Us -->
+
+
+    <!-- Alur -->
+    <section id="alur">
+        <div class="container">
+            <div class="px-4 py-5 my-5 text-center">
+                <span class="display-6 fw-bold text-body-emphasis-white border-bottom">Alur Pendaftaran Calon PPDB
+                    Baru</span>
+            </div>
+            <div class="alur">
+            <div class="row" id="alur">
+                <div class="col-lg-2">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7862.jpg?w=740&t=st=1686914885~exp=1686915485~hmac=9c385f457234392e5855f7691de1b7729f0c57d5e54d0adefe4c188b60b38179">
+                    <div class="d-grid col-10" style="width: 140px;">
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#1"
+                            aria-expanded="false" aria-controls="1" id="btnalur">
+                            1
+                        </button>
+                    </div>
+                    <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="1">
+                            <div class="card card-body border-light shadow-lg"
+                                style="width: 140px; background-color:#1c4343">
+                                Membuat Akun / Login Calon PPDB
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        src="https://img.freepik.com/free-vector/placeholder-concept-illustration_114360-4727.jpg?w=740&t=st=1686914989~exp=1686915589~hmac=6a190405be5ce8e33cdcaf14aef622d1b0249210a08e202a0c1d75752949256c">
+                    <div class="d-grid col-10" style="width: 140px;">
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#2"
+                            aria-expanded="false" aria-controls="2" id="btnalur">
+                            2
+                        </button>
+                    </div>
+                    <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="2">
+                            <div class="card card-body border-light shadow-lg"
+                                style="width: 140px; background-color:#1c4343">
+                                Mendaftar Melalui Form Pendaftaran Di Website
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        src="https://img.freepik.com/free-vector/completed-concept-illustration_114360-3891.jpg?w=740&t=st=1686913793~exp=1686914393~hmac=ea936c0f68748089614b2997b40ea5e58c78225b8c1897cb476bb043134fb30d">
+                    <div class="d-grid col-10" style="width: 140px;">
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#3"
+                            aria-expanded="false" aria-controls="3" id="btnalur">
+                            3
+                        </button>
+                    </div>
+                    <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="3">
+                            <div class="card card-body border-light shadow-lg"
+                                style="width: 140px; background-color:#1c4343">
+                                Mengirim Data Untuk Di Validasi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-lg-2">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        src="https://img.freepik.com/free-vector/hand-holding-pen-concept-illustration_114360-8450.jpg?w=740&t=st=1686915103~exp=1686915703~hmac=73d60fc2378a146a8f32f70cf36f1f2d1d33d009ed69efdf769c8541938fc881">
+                    <div class="d-grid col-10" style="width: 140px;">
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#4"
+                            aria-expanded="false" aria-controls="4" id="btnalur">
+                            4
+                        </button>
+                    </div>
+                    <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="4">
+                            <div class="card card-body border-light shadow-lg"
+                                style="width: 140px; background-color:#1c4343">
+                                Mengikuti Ujian & Wawancara Offline
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="col-lg-2">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        src="https://img.freepik.com/free-vector/push-notifications-concept-illustration_114360-4730.jpg?w=740&t=st=1686915166~exp=1686915766~hmac=bc4cf4aa493eeefe80e5e063c4a9db1a9871ad1376228adb852eb42dd72b2382">
+                    <div class="d-grid col-10" style="width: 140px;">
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#5"
+                            aria-expanded="false" aria-controls="5" id="btnalur">
+                            5
+                        </button>
+                    </div>
+                    <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="5">
+                            <div class="card card-body border-light shadow-lg"
+                                style="width: 140px; background-color:#1c4343">
+                                Menunggu Data Di Validasi Dan Di Terima
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        src="https://img.freepik.com/free-vector/high-school-concept-illustration_114360-8329.jpg?w=740&t=st=1686915449~exp=1686916049~hmac=d4ca4c020ca16bdd28c7f0ab3e4b91057d4e94e0548aaf56af025acd27d60d10">
+                    <div class="d-grid col-10" style="width: 140px;">
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#6"
+                            aria-expanded="false" aria-controls="6" id="btnalur">
+                            6
+                        </button>
+                    </div>
+                    <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="6">
+                            <div class="card card-body border-light shadow-lg"
+                                style="width: 140px; background-color:#1c4343">
+                                Datang Offline Untuk Registrasi Ulang
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- End Alur -->
+
+
+    <!-- Syarat -->
+    <section id="syarat">
+        <div class="container text-white">
+            <hr class="text-white">
+            <div class="row featurette px-4 py-5 my-5">
+                <div class="col-md-7">
+                    <span class="featurette-heading fs-1 border-bottom fw-semibold lh-base">Syarat Pendaftaran
+                    </span>
+                    <div class="py-4">
+                        <p class="lead"><i class="fa fa-check-square-o text-warning"></i>Scan KTP Wali Murid ( Sesuai
+                            dengan KK Peserta )</p>
+                        <p class="lead"><i class="fa fa-check-square-o text-warning"></i>Scan KK</p>
+                        <p class="lead"><i class="fa fa-check-square-o text-warning"></i>Scan Akte Kelahiran</p>
+                        <p class="lead"><i class="fa fa-check-square-o text-warning"></i>Pas foto dengan ukuran 4
+                            x 6
+                        </p>
+                        <p class="lead"><i class="fa fa-check-square-o text-warning"></i>Pas foto wali murid dengan
+                            ukuran
+                            4 x 6 </p>
+                        <p class="lead"><i class="fa fa-check-square-o text-warning"></i>Scan Ijazah</p>
+                        <p class="lead"><i class="fa fa-check-square-o text-warning"></i>Scan Raport Terakhir</p>
+                        <p class="lead"><i class="fa fa-check-square-o text-warning"></i>Scan Surat Pindah (Bagi
+                            Pindahan)
+                        </p>
+                        <p class="lead"><i class="fa fa-check-square-o text-warning"></i>Scan Surat surat pendukung (
+                            KIP,
+                            KIS, BPJS, SKTM , dll )</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="400"
+                        height="400"
+                        src="https://img.freepik.com/free-vector/business-people-studying-list-rules-reading-guidance-making-checklist_74855-10492.jpg?w=740&t=st=1686916422~exp=1686917022~hmac=1c2afbb2e4cd13dc4f9fc9550f8787cdfe1e065ac695f8f2be2ace6d48918ca9"
+                        id="imgsyarat">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Syarat -->
+
+
+    <!-- start contact us -->
+    <section id="contact" style="color: white;">
+        <div class="container">
+            <div class="px-4 py-5 my-5 text-center">
+                <span class="display-6 fw-bold text-body-emphasis-white border-bottom">Kontak Kami</span>
+                <div class="col-lg-8 mx-auto">
+                    <br>
+                    <h4 class="lead mb-4">PPDB ONLINE © MADRASAH IBTIDAIYAH HUBBUL WATHAN TOLI-TOLI<br>JLN.POROS GUNUNG LABAGA, Desa Toli-Toli, Kec. Lalonggasumeeto, Kab.<br>
+                        Konawe, Sulawesi Tenggara.</h4>
+                    <p align="center">
+                        <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1118.183242542793!2d122.5527159261989!3d-3.902059827511741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1718975905099!5m2!1sid!2sid"
+                    width="200" height="200" style="border:2px solid #000; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                    </p>
+                    <p align="center" style="font-size: 14px;">
+                        <span><b><i class="fa fa-phone-square">&nbsp;</i>+62 812-4317-9406 (St Rahmah,
+                                S.Pd.I)</b></span>
+                        <span><b><i class="fa fa-phone-square">&nbsp;</i>+62 853-9659-0157 (Hasnah S.pd.I)</b></span><br>
+                        <span><b><i class="fa fa-envelope">&nbsp;</i>
+                            Mtss.hbwtolitoli@gmail.com</b></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end contact us -->
+
+    <!-- start footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
+            <p class="text-center text-light">PPDB Online © MTSS HUBBUL WATHAN - 2024 <a href="#"><i class="fa fa-long-arrow-up text-white"></i></a></p>
+        </footer>
+    </div>
+    <!-- end footer -->
+
+</body>
+
+</html>

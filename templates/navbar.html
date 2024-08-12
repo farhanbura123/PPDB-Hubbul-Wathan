@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg rounded fixed-top">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
+            aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+            <a class="navbar-brand col-lg-3 me-0" href="{{ url_for('home_user') }}">
+                <img src="{{ url_for('static', filename='foto/logo.png') }}" style="width: 45px; height:45px" />
+                <span class="fs-4 nav-font" style="font-weight:bold; color: white;">PPDB MIS HBW</span>
+            </a>
+            <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home_user') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('pendaftaran_siswa') }}">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('riwayat_pendaftaran') }}">Status Verifikasi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('kontak') }}">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown"
+                data-bs-display="static" aria-expanded="false">
+                Logout
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end">
+                <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- pop up -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById('logoutBtn').addEventListener('click', function (event) {
+        event.preventDefault();
+        Swal.fire({
+            icon: 'question',
+            title: 'Konfirmasi Logout',
+            text: 'Yakin ingin logout?',
+            showCancelButton: true,
+            confirmButtonText: 'Logout',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/logout',
+                    success: function (response) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Logout Berhasil',
+                            text: 'Mengarahkan ke halaman utama.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(() => {
+                            window.location.href = '{{ url_for("index") }}';
+                        });
+                    },
+                    error: function (error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Gagal melakukan logout. Silahkan coba lagi.'
+                        });
+                    }
+                });
+            }
+        });
+    });
+</script>
